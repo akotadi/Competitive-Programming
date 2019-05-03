@@ -163,7 +163,7 @@ typedef multiset<int> MSETI;
 template <typename T = int, typename U = int> void swapi(T *a, U *b) {(*a) ^= (*b); (*b) ^= (*a); (*a) ^= (*b);}
 double tick(){static clock_t oldt,newt=clock();double diff=1.0*(newt-oldt)/CLOCKS_PER_SEC;oldt=newt;return diff;}
 template<typename T = int> T EXP(T n, T e){T ans=1;while(e){if(e&1)ans*=n;n*=n;e>>=1;}return ans;}
-template<typename T = int> T EXP(T n, T e, T m){T ans=1;while(e){if(e&1)ans=GMOD(ans*n,m);n=GMOD(n*n,m);n>>=1;}return ans;}
+template<typename T = int> T EXP(T n, T e, T m){T ans=1;while(e){if(e&1)ans=GMOD(ans*n,m);n=GMOD(n*n,m);e>>=1;}return ans;}
 template<typename T = int> T MULT(T a, T b){T ans=0;if(abs(b)>abs(a))swapi<T>(a,b);if(b<0)a*=-1,b*=-1;while(b){if(b&1)ans+=a;b>>=1;a+=a;}return ans;}
 template<typename T = int> T MULT(T a, T b, T m){T ans=0;a%=m;b%=m;if(abs(b)>abs(a))swapi<T>(a,b);if(b<0)a*=-1,b*=-1;while(b){if(b&1)ans=(ans+a)%m;b>>=1;a=(a+a)%m;}return ans;}
 template<typename T> T extendedGCD(T a, T b, T &x, T &y){T xx=0,yy=1;y=0;x=1;while(b){T q=a/b,t=b;b=a%b;a=t;t=xx;xx=x-q*xx;x=t;t=yy;yy=y-q*yy;y=t;}return a;}
