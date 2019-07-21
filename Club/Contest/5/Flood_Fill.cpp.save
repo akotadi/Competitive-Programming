@@ -1,0 +1,85 @@
+//#pragma GCC optimize("Ofast, unroll-loops")
+#include <iostream>
+#include <algorithm>
+#include <vector>
+#include <ctime>
+#include <unordered_set>
+#include <string>
+#include <map>
+#include <unordered_map>
+#include <random>
+#include <set>
+#include <cassert>
+#include <functional>
+#include <queue>
+#include <numeric>
+#include <bitset>
+#include <iterator>
+
+using namespace std;
+
+const int N = 303, M = 18;
+
+mt19937 gen(time(NULL));
+#define forn(i, n) for (int i = 0; i < n; i++)
+#define debug(...) fprintf(stderr, __VA_ARGS__), fflush(stderr)
+#define all(a) (a).begin(), (a).end()
+#define pii pair<int, int>
+#define mp make_pair
+#define endl '\n'
+
+typedef long long ll;
+
+template <typename T = int>  
+inline T read() {                                                       //Super cool way to read ints
+                                                       //Set to 0
+    T number = 0, numberSign = 1;                                                   //Sign all ok
+    char currentChar = getchar_unlocked();                              //Read a char
+ 
+    while (currentChar < '0' or currentChar > '9') {                    //If we are not reading numbers
+        if (currentChar == '-')  numberSign = -1;                       //If we have found the sign
+        currentChar = getchar_unlocked();                               //Read the next char
+    }
+
+    while (currentChar >= '0' and currentChar <= '9') {                 //While we read numbers
+        number = (number << 3) + (number << 1) + (currentChar - '0');   //Multiply by 10
+        currentChar = getchar_unlocked();                               //Read the next char
+    }
+
+    return number * numberSign;                                         //If negative
+}
+
+void floodFill(int x, int y){
+	if(!Dentro(x,y)) return; // no está en la matriz
+	if(!Valida(x,y)) return; // ha sido visitada o es muro
+	visitado[x][y] = true;
+	floodFill(x+1,y);
+	...
+	floodFill(x+1,y+1); // direcciones a visitar
+}
+
+
+int movX[10] = {-1,0,1,0};
+int movY[10] = {0,1,0,-1};
+
+int matriz[2][adyacentes] = {{-1,0,1,0},{0,1,0,-1}};
+
+void floodFill(int x, int y){
+	if(!Dentro(x,y)) return; // no está en la matriz
+	if(!Valida(x,y)) return; // ha sido visitada o es muro
+	visitado[x][y] = true;
+	for n(i,adyacentes)
+		floodFill(x+movX[i],y+movY[i]); // direcciones a visitar
+}
+
+
+n = filas
+m = columnas
+regiones=0;
+for n(i,n)
+for n(j,m)
+	if(!visitado[i][j]){
+		floodFill(i,j);
+		regiones++
+	}
+return 0;
