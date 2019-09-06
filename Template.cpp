@@ -1,3 +1,7 @@
+// Compilation with:
+// g++ file.cpp -D<DEBUG> -o file && ./file < input > output
+
+
 /********   Pragma Headers to control the compiler flags ********/
 
 // Unroll loops is efficient for a short amount of this.
@@ -9,21 +13,6 @@
 // Avoid warning
 // #define _CRT_SECURE_NO_WARNINGS
 
-// __attribute__((constructor)) void _() {
-//   std::ios::sync_with_stdio(false);
-//   std::cin.tie(nullptr);
-//   std::cout.tie(nullptr);
-//   std::cerr.tie(nullptr);
-// }
-
-// static auto const fastio = [](){
-//   std::ios::sync_with_stdio(false);
-//   std::cin.tie(nullptr);
-//   std::cout.tie(nullptr);
-//   return nullptr;
-// }();
-// 
-
 
 /********   Header Files ********/
 
@@ -34,6 +23,7 @@
 #include <cstdio>
 // C++ standard I/O streams.
 #include <iostream>
+#include <iomanip>
 // Debbuging tool in C.
 #include <cassert>
 
@@ -75,6 +65,7 @@
 #include <utility>
 // Defines elements with the characteristics of arithmetic types. (numeric_limits<T>)
 #include <limits>
+#include <climits>
 
 // Time library for C++11.
 #include <chrono>
@@ -91,6 +82,21 @@
 
 // Replace use std:: with the standard C++.
 using namespace std;
+
+__attribute__((constructor)) void _() {
+  std::ios::sync_with_stdio(false);
+  std::cin.tie(nullptr);
+  std::cout.tie(nullptr);
+  std::cerr.tie(nullptr);
+}
+
+// static auto const fastio = [](){
+//   std::ios::sync_with_stdio(false);
+//   std::cin.tie(nullptr);
+//   std::cout.tie(nullptr);
+//   return nullptr;
+// }();
+// 
 
 // Provides a random number generation based on Mersenne Twister algorithm.
 auto seed = chrono::high_resolution_clock::now().time_since_epoch().count();
@@ -186,14 +192,12 @@ template<typename T> T modInverse(T a, T n){T x,y;T d = extendedGCD(a, n, x, y);
 inline string to_string(int num){stringstream ss;ss<<num;return ss.str();}
 
 #define tcsolve() int tcs=read(int); while(tcs--) solve();
-#define MAXN 10005
-#define SIZE 1000001
 
 
 /******   Template of Fast I/O Methods   *********/
 
 template <typename T = int>  
-constexpr T readNumber() {
+inline T readNumber() {
     T number = 0, numberSign = 1;
     // getchar_unlocked fast than getchar but not always allowed
     // char currentChar = getchar_unlocked();
@@ -227,7 +231,7 @@ inline void readStr(char *str) {
 }
 
 template <typename T = int> 
-constexpr void writeNumber(T number)
+inline void writeNumber(T number)
 {
     bool flag = false;
     if (number < 0) number *= -1, flag = true;
@@ -255,6 +259,9 @@ constexpr void writeNumber(T number)
 
 /********   Main part of the program   ********/
 
+#define MAXN 10005
+#define SIZE 1000001
+
 void precalc(){
     // 
 }
@@ -265,12 +272,12 @@ void solve(){
 
 int main(){
 
-    fastio;
-    
-    #ifndef ONLINE_JUDGE
-        freopen("input.txt","r",stdin);
-        freopen("output.txt","w",stdout);
-        freopen("log.txt", "w", stderr);
+    // fastio;
+
+    #ifdef DEBUG
+        // freopen("input.txt","r",stdin);
+        // freopen("output.txt","w",stdout);
+        // freopen("log.txt", "w", stderr);
     #endif
 
     // ofstream fout("bubble.out");
@@ -279,8 +286,9 @@ int main(){
 
     // compile program
     // tcsolve();
+    // solve();
 
-    #ifndef ONLINE_JUDGE
+    #ifdef DEBUG
         // cout << "Execution time : " << tick() << endl ;
         fprintf(stdout,"\nTIME: %.3lf sec\n", (double)clock()/(CLOCKS_PER_SEC));
     #endif
