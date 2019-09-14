@@ -1,3 +1,6 @@
-**/input
-**/output
-**/*.out
+input
+output
+*.in
+*.out
+test.*
+*.exe
