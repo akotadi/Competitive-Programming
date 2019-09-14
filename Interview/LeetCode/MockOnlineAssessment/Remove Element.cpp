@@ -19,23 +19,21 @@
  */
 class Solution {
 public:
-    int findMin(vector<int>& nums) {
+    int removeElement(vector<int>& nums, int val) {
         int n = nums.size();
+        if(n == 0)
+            return n;
         
-        int left = 0, right = n-1;
-        while(left < right){
-            int mid = left + ((right - left) >> 1);
-            if(nums[mid] > nums[right]) left = mid+1;
-            else if(nums[mid] < nums[right]) right = mid;
-            else {
-                if (nums[right - 1] > nums[right]) {
-                    left = right;
-                    break;
-                }
-                right--;
+        int i = 0, j = n-1;
+        while(i <= j) {
+            if(nums[i] == val) {
+                swap(nums[i], nums[j]);
+                j--;
+            }else{
+                i++;
             }
         }
         
-        return nums[right];
+        return i;
     }
 };

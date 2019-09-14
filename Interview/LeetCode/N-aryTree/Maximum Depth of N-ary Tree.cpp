@@ -1,24 +1,22 @@
 /*
-Given a n-ary tree, find its maximum depth.
-
-The maximum depth is the number of nodes along the longest path from the root node down to the farthest leaf node.
-
-For example, given a 3-ary tree:
-
- 
-
-
- 
-
-We should return its max depth, which is 3.
-
- 
-
-Note:
-
-The depth of the tree is at most 1000.
-The total number of nodes is at most 5000.
-*/
+ * Copyright (c) 2019 ManuelCH.
+ *
+ * This file is part of Interview-solutions 
+ * (see https://github.com/akotadi).
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
 
 /*
 // Definition for a Node.

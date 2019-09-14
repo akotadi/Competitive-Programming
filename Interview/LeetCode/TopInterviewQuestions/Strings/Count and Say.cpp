@@ -1,30 +1,22 @@
 /*
-The count-and-say sequence is the sequence of integers with the first five terms as following:
-
-1.     1
-2.     11
-3.     21
-4.     1211
-5.     111221
-1 is read off as "one 1" or 11.
-11 is read off as "two 1s" or 21.
-21 is read off as "one 2, then one 1" or 1211.
-
-Given an integer n where 1 ≤ n ≤ 30, generate the nth term of the count-and-say sequence.
-
-Note: Each term of the sequence of integers will be represented as a string.
-
- 
-
-Example 1:
-
-Input: 1
-Output: "1"
-Example 2:
-
-Input: 4
-Output: "1211"
-*/
+ * Copyright (c) 2019 ManuelCH.
+ *
+ * This file is part of Interview-solutions 
+ * (see https://github.com/akotadi).
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
 
 class Solution {
 public:

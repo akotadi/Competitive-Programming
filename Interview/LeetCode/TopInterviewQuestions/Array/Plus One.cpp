@@ -1,21 +1,22 @@
 /*
-Given a non-empty array of digits representing a non-negative integer, plus one to the integer.
-
-The digits are stored such that the most significant digit is at the head of the list, and each element in the array contain a single digit.
-
-You may assume the integer does not contain any leading zero, except the number 0 itself.
-
-Example 1:
-
-Input: [1,2,3]
-Output: [1,2,4]
-Explanation: The array represents the integer 123.
-Example 2:
-
-Input: [4,3,2,1]
-Output: [4,3,2,2]
-Explanation: The array represents the integer 4321.
-*/
+ * Copyright (c) 2019 ManuelCH.
+ *
+ * This file is part of Interview-solutions 
+ * (see https://github.com/akotadi).
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program. If not, see <http://www.gnu.org/licenses/>.
+ */
 
 class Solution {
 public:
