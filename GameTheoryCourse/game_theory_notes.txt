@@ -1,0 +1,12 @@
+Juegos combinatoriales imparciales
+
+Participan 2 jugadores, el conjunto de posibles estados del juego es finito, se alternan, el conjunto de movimientos posibles a partir de una posición es el mismo para los dos jugadores (imparcial), el juego es finito, el juego termina cuando un jugador ya n opuede realizar movimientos válidos.
+
+El juego de nim
+
+Posición N (next) y P (previous), dos conjuuntos donde se agrupan los estados.
+
+1. Todas las posiciones finales son p.
+2. Si hay al menos un movimiento que caiga en una posición p, yo soy n.
+3. Si cualquier lugar al que me pueda mover es n, yo soy p.
+
