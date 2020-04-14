@@ -4,4 +4,4 @@ output
 *.out
 test.*
 *.exe
-*in
+in*
